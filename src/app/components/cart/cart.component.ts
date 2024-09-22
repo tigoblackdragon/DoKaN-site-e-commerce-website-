@@ -28,6 +28,7 @@ countNumber: number=0;
           this.cartDetails=res.data;
           console.log(res);
           this.countNumber =res.numOfCartItems;
+          
         },
         error: (err) => {console.error(err)}
       })
@@ -48,6 +49,8 @@ removeProduct(id:string){
       this.cartDetails=par.data;
       this._CartService.cartNumber.next(par.numOfCartItems);
       this.countNumber =par.numOfCartItems;
+      console.log(id)
+      
       // this._ToastrService.error(par.status, "Product Deleted");
       
     },

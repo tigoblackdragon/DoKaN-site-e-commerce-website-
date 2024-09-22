@@ -10,6 +10,16 @@ import { environment } from '../environments/envirnoment';
 export class CartService {
 
   cartNumber:BehaviorSubject<number>=new BehaviorSubject(0);
+  private data: string = ''; // Data stored here
+  public cartId: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
+  setData(value: string) {
+    this.data = value;
+  }
+
+  getData(): string {
+    return this.data;
+  }
 
   private readonly _HttpClient= inject (HttpClient) ;
   tokenHeader:any={token:localStorage.getItem('userToken')};
